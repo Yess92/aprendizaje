@@ -1,11 +1,32 @@
-﻿using System.ComponentModel.Design;
+﻿using comandosbasic.models;
+using System.ComponentModel.Design;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace comandosbasic
 {
+    
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Explicacion Clase");
+            Alumno alumno1 = new Alumno();
+            Console.Write("Escribe tu nombre:");
+            alumno1.nombre = Console.ReadLine();
+            Console.Write("Escribe tu edad:");
+            alumno1.edad = int.Parse(Console.ReadLine());
+            Console.WriteLine($" Tu nombre es:{alumno1.nombre}");
+            Console.WriteLine($" Tu edad es:{alumno1.edad}");
+            double promedio = alumno1.promedio();
+
+            Console.WriteLine($" Tu promedio es:{promedio}");
+
+
+            
+
+
+            Console.WriteLine("Fin de explicacion Clase");
             //string edad;
             ///*string nombre;
             //string apellido;*/
@@ -234,13 +255,14 @@ namespace comandosbasic
             //    /////////////
             //    /////////////
             //}
-            int[] arreglo1 = new int[] { 5,9,3 };
-            int[] arreglo2 = new int[] { 9,5,2,8,7 };
-            int[] arreglo3 = new int[] { 10 };
-            double metodoInt = Promedio(arreglo1 );
-            Console.WriteLine( metodoInt );
-            Console.WriteLine(Promedio(arreglo2));
-            Console.WriteLine(Promedio(arreglo3));
+            //int[] arreglo1 = new int[] { 5,9,3 };
+            //int[] arreglo2 = new int[] { 9,5,2,8,7 };
+            //int[] arreglo3 = new int[] { 10 };
+            //double metodoInt = Promedio(arreglo1 );
+            //Console.WriteLine( metodoInt );
+            //Console.WriteLine(Promedio(arreglo2));
+            //Console.WriteLine(Promedio(arreglo3));
+            //Limpio();
         }
 
         //(Que regreso) Como me llamo (Que necesito)
@@ -275,6 +297,20 @@ namespace comandosbasic
             return Promedio;
         }
 
+
+        static void Limpio()
+        {
+            string nombre;
+            string edad;
+            Console.Write("Escribe tu nombre: ");
+            nombre = Console.ReadLine();
+            Console.WriteLine($"Hola,{nombre}");
+            Console.Write($"Escribe tu edad");
+            edad = Console.ReadLine();
+            
+            int edad1= int.Parse(edad);
+            Console.WriteLine($"Tu edad es {edad}"); 
+        }
         
 
         
